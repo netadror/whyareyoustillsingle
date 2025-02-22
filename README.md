@@ -4,7 +4,8 @@ A humorous little web app that generates totally legitimate reasons why I'm stil
 
 ## What is this? 🎯
 
-This is a silly project that displays a sequence of "reasons" why I'm still single, and can help shut up your aunt/uncle/mother/annoying friend/random person in the supermarket from asking you for answers and making you feel like shit!
+This is a silly project that displays a sequence of "reasons" why I'm still single, and can help you when trying to answer that aunt/uncle/mother/annoying friend/random person in the supermarket.
+
 featuring:
 - A profile picture that turns into a surprised cat when hovered 😺
 - Sequential responses that are totally valid explanations (sort of)
