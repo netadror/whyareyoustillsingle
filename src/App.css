@@ -178,12 +178,17 @@ button:hover {
     }
 
     p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .socials a {
+        font-size: 1.5rem;
     }
 
     .header p {
-        font-size: 1.8rem;
-        width: 300px;
+        font-size: 1.7rem;
+        width: 350px;
+        margin-top: 40px;
     }
 }
 
@@ -197,9 +202,7 @@ button:hover {
         gap: 10px;
     }
 
-    .socials a {
-        font-size: 1rem;
-    }
+
 
     h1 {
         font-size: 1.5rem;
