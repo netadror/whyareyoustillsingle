@@ -54,7 +54,7 @@ function App() {
                                 <img className="hover-image" src="https://media1.tenor.com/m/1MfIiC1yllEAAAAC/cat-huh-cat-huh-etr.gif" alt="Huh cat" />
                             </div>
                             <p>
-                                Help solve the mystery!
+                                Wanna help solve the mystery?
                             </p>
                             <div className="socials">
                                 <a href="https://x.com/netadror" target="_blank">Twitter</a>

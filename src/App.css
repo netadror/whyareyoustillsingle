@@ -159,20 +159,40 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    .profile img {
+        width: 250px;
+        height: 250px;
+    }
+
     .socials {
         gap: 15px;
     }
 
     .socials a {
-        font-size: 1.2rem;
+        font-size: 1.rem;
     }
+
 
     h1 {
         font-size: 2rem;
     }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 1.8rem;
+        width: 300px;
+    }
 }
 
 @media (max-width: 400px) {
+    .profile img {
+        width: 200px;
+        height: 200px;
+    }
+
     .socials {
         gap: 10px;
     }
