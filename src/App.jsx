@@ -5,25 +5,31 @@ import profilepic from '../public/images/neta_dror.jpg';
 function App() {
     const responses = [
         "Wouldn't you like to know? 😏",
-        "Depends on who's asking 🙃",
-        "Why? Why did you hear? 😅",
         "It's a mystery! 🧩",
-        "I'll ask the cat 🐱",
+        "I'm still debugging 🐛",
+        "Depends on who's asking 🙃",
+        "Maybe my image below has a clue 🤔",
+        "Why? What did you hear? 😅",
+        "Error 404: cute smart guy not found (yet) 💻",
         "That's classified information 🔐",
         "The universe hasn't decided yet 🌌",
-        "Bits me, bytes me 🤖",
+        "Bits me 🤖",
+        "Currently accepting applications 📝",
         "I'm waiting for [?] 🕵️",
         "Maybe he's waiting for the loading screen to finish 🕙",
         "It's a secret 🤫",
         "I think the HUH cat knows 🐱",
-        "Maybe my image below has a clue 🤔",
         "I'll go ask my plants 🌱",
         "Maybe the next chapter still buffering? 💻",
+        "I ask myself the same question 🤔",
+        "Maybe he's too nervous to ask 💘",
+
     ];
 
     const [currentResponse, setCurrentResponse] = useState("");
     const [responseGenerated, setResponseGenerated] = useState(false);
     const [responseIndex, setResponseIndex] = useState(0);
+    const [copyMessage, setCopyMessage] = useState(false);
 
     const generateResponse = () => {
         setResponseIndex((prevIndex) => {
@@ -32,6 +38,19 @@ function App() {
             return newIndex;
         });
         setResponseGenerated(true);
+    };
+
+    const handleShare = async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href);
+            setCopyMessage(true);
+            setTimeout(() => {
+                setCopyMessage(false);
+            }, 2000);
+        } catch (error) {
+            console.log('Error copying to clipboard:', error);
+            alert('Could not copy link. Please try again!');
+        }
     };
 
     return (
@@ -61,21 +80,35 @@ function App() {
                                 <a href="https://www.linkedin.com/in/netadror/" target="_blank">LinkedIn</a>
                                 <a href="https://www.instagram.com/neta_dror/" target="_blank">Instagram</a>
                                 <a href="https://www.facebook.com/netadror" target="_blank">Facebook</a>
-                                <a href="https://github.com/netadror" target="_blank">GitHub</a>
+                                {/* share */}
+
+                            </div>
+
+                            <div className="share-links">
+                                <a
+                                    href="https://github.com/netadror/whyareyoustillsingle.git"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="clone-link"
+                                >
+                                    💻 Clone this repo & make your own!
+                                </a>
                             </div>
                         </div>
                     </div>
                 )}
-                <a
-                    href="https://github.com/netadror/whyareyoustillsingle.git"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="clone-link"
-                >
-                    💻 Clone this repo & make your own!
-                </a>
+                <div className="share-container">
+
+                    <button onClick={handleShare} className="share-button">Copy link 🔗</button>
+                    {copyMessage && (
+                        <div className="copy-message">
+                            Link copied to clipboard! 📋
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
+
     );
 }
 
